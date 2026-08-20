@@ -448,7 +448,7 @@ git push origin main
 
 - **主題代號**：CAM-C2-SW
 - **本版更新時間**：2026-08-20（W03b/W03c 完成）
-- **git HEAD（kernel-6.1 submodule）**：W03b DTS 修改已 commit（詳見 §10）
+- **git HEAD（kernel-6.1 submodule）**：`3d0580aa0d50`（branch `myd-lr3568-l601`，詳見 §10）
 - **前置主題**：CAM-C2 v3.4（硬體採購，已定案，樣品已出貨）
 - **下一步**：W03f push diff → W04 等樣品到貨後板端 bring-up
 
@@ -612,6 +612,17 @@ git status        # 確認只有這一個檔案 staged
 git commit -m "W03b: add IMX415 sensor to DTS, disable ov13855 to avoid endpoint conflict"
 git log --oneline -3   # 確認 commit 存在
 ```
+
+**✅ 2026-08-20 已執行結果：**
+```
+[myd-lr3568-l601 3d0580aa0d50] W03b: add IMX415 sensor to DTS, disable ov13855 to avoid endpoint conflict
+ 1 file changed, 35 insertions(+), 2 deletions(-)
+3d0580aa0d50 (HEAD -> myd-lr3568-l601) W03b: add IMX415 sensor to DTS, disable ov13855 to avoid endpoint conflict
+f9f556d92842 FIX: update new mipi101c configuration
+b61f6161bafe FIX: modify myd-lr3568 compatible name
+```
+kernel-6.1 的工作分支為 `myd-lr3568-l601`（MYIR BSP 原始分支，不要切換）。
+
 然後回到 SDK 父 repo 更新 submodule 指針（選做，若有需要推整套 SDK）：
 ```bash
 cd /home/nobel/Downloads/MYD-LR3568
